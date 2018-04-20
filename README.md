@@ -1,2 +1,2 @@
-# 4chandown
-simple thread file downloader
+# zzz
+select thread url,select folder.
