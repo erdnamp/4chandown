@@ -34,7 +34,6 @@ public class SickController implements Initializable {
     DirectoryChooser dirChooser = new DirectoryChooser();
     dirChooser.setTitle("Choose Folder");
     File file = dirChooser.showDialog(null);
-    System.out.println(file);
     output.setText(file.getPath().concat("\\"));
     }catch(Exception error){
         
@@ -49,7 +48,9 @@ public class SickController implements Initializable {
         String imags="https:"+image;
         URL x = new URL(imags);
         File file=new File(output.getText().concat(image.substring(15)));
+        if(!(file.exists())){
         FileUtils.copyURLToFile(x,file);
+        }
     }
     }
     @Override
