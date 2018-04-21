@@ -47,7 +47,7 @@ public class SickController implements Initializable {
         String image=images.get(i).attr("href");
         String imags="https:"+image;
         URL x = new URL(imags);
-        File file=new File(output.getText().concat(image.substring(15)));
+        File file=new File(output.getText().concat(image.substring(image.lastIndexOf("/"))));
         if(!(file.exists())){
         FileUtils.copyURLToFile(x,file);
         }
